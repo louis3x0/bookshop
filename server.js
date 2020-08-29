@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const expressValidator = require("express-validator");
+const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
@@ -23,6 +24,7 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
+app.use(cors());
 
 // Route import
 const authRoutes = require("./routes/auth");
