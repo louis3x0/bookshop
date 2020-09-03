@@ -4,7 +4,7 @@ import { login, authenticate } from "../helpers/auth";
 import loader from "../assets/831.svg";
 import logo from "../assets/logo.png";
 
-const Register = () => {
+const Login = () => {
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -117,4 +117,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

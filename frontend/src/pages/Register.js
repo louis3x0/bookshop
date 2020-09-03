@@ -95,7 +95,7 @@ const Register = () => {
   const showSuccess = () => (
     <div className="alert color-new" style={{ display: success ? "" : "none" }}>
       Account created with success{" "}
-      <Link to="/signin" className="log-please">
+      <Link to="/login" className="log-please">
         Please log in.
       </Link>
     </div>

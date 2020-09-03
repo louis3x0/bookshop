@@ -40,17 +40,26 @@ const Navbar = ({ history }) => {
             <>
               <li className="nav-item">
                 <Link
+                  to="/register"
+                  className="nav-link"
+                  style={isActive("/register")}
+                >
+                  Register
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
                   to="/login"
                   className="nav-link"
                   style={isActive("/login")}
                 >
-                  Login
-                </Link>{" "}
+                  Sign In
+                </Link>
               </li>
             </>
           )}
-
-          {isAuthenticated() && (
+          {/* User Links */}
+          {isAuthenticated() && isAuthenticated().user.role === 0 && (
             <>
               <li className="nav-item">
                 <Link
@@ -59,7 +68,39 @@ const Navbar = ({ history }) => {
                   style={isActive("/signout")}
                   onClick={() => signout()}
                 >
-                  {" "}
+                  Sign Out
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/user/dashboard"
+                  className="nav-link"
+                  style={isActive("/user/dashboard")}
+                >
+                  {isAuthenticated().user.name}
+                </Link>
+              </li>
+            </>
+          )}
+          {/* Admin Links */}
+          {isAuthenticated() && isAuthenticated().user.role === 1 && (
+            <>
+              <li className="nav-item">
+                <Link
+                  to="/admin/dashboard"
+                  className="nav-link"
+                  style={isActive("/admin/dashboard")}
+                >
+                  {isAuthenticated().user.name}
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/login"
+                  className="nav-link"
+                  style={isActive("/signout")}
+                  onClick={() => signout()}
+                >
                   Sign Out
                 </Link>
               </li>
