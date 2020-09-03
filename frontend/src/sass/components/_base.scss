@@ -1,0 +1,223 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  .container {
+    overflow: hidden;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  height: 49px;
+}
+
+.wrapper {
+  margin-top: 6rem;
+}
+
+.overview {
+  font-size: 0.9rem;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  color: rgb(78, 84, 110);
+  font-weight: lighter;
+  margin-top: 1.5rem;
+}
+
+.login {
+  text-align: center;
+  color: #031b29;
+  font-weight: 600;
+
+  font-size: 25.6px;
+  line-height: 24px;
+}
+
+.form-group {
+  max-height: 2.3rem;
+}
+
+.forgot {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(3, 12, 48);
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+html,
+base {
+  @font-face {
+    font-family: "acumin-pro-extra-condensed";
+    src: url("https://use.typekit.net/af/c4767b/00000000000000003b9acb20/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+        format("woff2"),
+      url("https://use.typekit.net/af/c4767b/00000000000000003b9acb20/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+        format("woff"),
+      url("https://use.typekit.net/af/c4767b/00000000000000003b9acb20/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+        format("opentype");
+  }
+  font-family: acumin-pro, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
+.member {
+  color: #673ab7;
+  text-decoration: underline;
+}
+
+.success {
+  margin-top: 1rem;
+  background-color: #030c30 !important;
+  color: white;
+}
+
+.nav-image {
+  height: 50px;
+  width: 50px;
+  margin-top: 1rem;
+}
+
+.nav-bg {
+  background-color: #fefefe;
+  border-bottom: yellow;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 3px 20px;
+}
+
+a {
+  color: rgba(0, 0, 0, 0.7) !important;
+  font-size: 14px;
+}
+
+.featured {
+  font-size: 18px;
+  line-height: 25px;
+  color: #030c30;
+  font-weight: 600;
+}
+
+.home-image {
+  width: 100%;
+  height: 50vh;
+}
+
+.books {
+  height: 90%;
+  width: 20%;
+  margin-bottom: 26px;
+  box-shadow: rgb(203, 240, 255) 8px 8px 0px 0px;
+  flex: 1 0 21%; /* explanation below */
+}
+
+.our-books {
+  font-size: 18px;
+  font-weight: 600;
+  color: #030c30;
+}
+
+.card {
+  margin: 0.6rem;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 12px;
+  color: #030c30;
+  line-height: 18px;
+}
+
+.card-text {
+  font-size: 10px;
+  font-style: italic;
+  line-height: 19px;
+  font-weight: 400;
+  color: #030c30;
+}
+
+.card {
+  :hover {
+    filter: brightness(90%);
+    opacity: 95%;
+    cursor: pointer;
+  }
+}
+
+img:hover + button {
+  display: inline-block;
+}
+
+.text-color {
+  color: rgba(0, 0, 0, 0.7) !important;
+  font-size: 17px;
+
+  a {
+    color: #e87475 !important;
+  }
+}
+
+.login {
+  font-size: 20px;
+}
+
+@media (max-width: 575px) {
+  .home-image {
+    display: none;
+  }
+  .nav-image {
+    margin-left: 1rem;
+  }
+  .container-book {
+    img {
+      padding-top: 2rem;
+      height: 40%;
+      width: 40%;
+      margin: 0 auto;
+    }
+  }
+  .card-title {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .card-text {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.forgot {
+  margin-left: 0.7rem;
+}
+
+.color-new {
+  color: #38353d !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .log-please {
+    color: #1e2329 !important;
+    font-weight: 500;
+  }
+  a {
+    color: #1e2329 !important;
+    font-weight: 700 !important;
+    text-decoration: underline;
+  }
+}
+
+.nav-link {
+  color: #131b42 !important;
+  font-weight: 60;
+}
+
+@media (max-width: 500px) {
+  .img-fluid {
+    height: 40%;
+    width: 40%;
+  }
+}

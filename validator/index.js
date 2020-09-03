@@ -1,20 +1,50 @@
 exports.userSignupValidator = (req, res, next) => {
-  req.check("name", "Numele este necesar").notEmpty();
+  req.check("name", "Name is required").notEmpty();
   req
-    .check("email", "Email-ul trebuie sa fie intre 3 si 32 de caractere")
+    .check("email", "Email must be between 3 to 32 characters")
     .matches(/.+\@.+\..+/)
-    .withMessage("Emailul trebuie sa contina @")
+    .withMessage("Email must contain @")
     .isLength({
       min: 4,
       max: 32,
     });
-  req.check("password", "Este necesara parola").notEmpty();
+  req.check("password", "Password is required").notEmpty();
   req
     .check("password")
     .isLength({ min: 6 })
-    .withMessage("Parola trebuie sa contina 6 caractere")
+    .withMessage("Password must contain at least 6 characters")
     .matches(/\d/)
-    .withMessage("Parola trebuie sa contina un numar");
+    .withMessage("Password must contain a number");
+  const errors = req.validationErrors();
+  if (errors) {
+    const firstError = errors.map((error) => error.msg)[0];
+    return res.status(400).json({ error: firstError });
+  }
+  next();
+};
+
+exports.forgotPasswordValidator = (req, res, next) => {
+  req
+    .check("email")
+    .not()
+    .isEmpty()
+    .isEmail()
+    .withMessage("Must be a valid email address");
+  const errors = req.validationErrors();
+  if (errors) {
+    const firstError = errors.map((error) => error.msg)[0];
+    return res.status(400).json({ error: firstError });
+  }
+  next();
+};
+
+exports.resetPasswordValidator = (req, res, next) => {
+  req
+    .check("newPassword")
+    .not()
+    .isEmpty()
+    .isLength({ min: 6 })
+    .withMessage("Password must be at least 6 characters long");
   const errors = req.validationErrors();
   if (errors) {
     const firstError = errors.map((error) => error.msg)[0];

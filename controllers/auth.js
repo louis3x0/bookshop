@@ -24,8 +24,7 @@ exports.login = (req, res) => {
   User.findOne({ email }, (err, user) => {
     if (err || !user) {
       return res.status(400).json({
-        error:
-          "Nu exista niciun utilizator cu acest email. Te rog inregistreaza-te",
+        error: "Contul este inexistent",
       });
     }
 
