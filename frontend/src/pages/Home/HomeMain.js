@@ -5,9 +5,11 @@ import Navbar from "../../components/Navbar/Navbar";
 const HomeMain = () => {
   return (
     <div>
-      <Navbar />
-      <Home />
-      <Footer />
+      <div className="home-container">
+        <Navbar />
+        <Home />
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -8,6 +8,8 @@ import PrivateRoute from "./PrivateRoutes/PrivateRoutes";
 import UserDashboard from "./components/UserDashboard/UserDashboard";
 import AdminRoute from "./PrivateRoutes/AdminRoute";
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
+import CreateCategory from "./components/AdminDashboard/CreateCategory";
+import CreateProduct from "./components/AdminDashboard/CreateProduct";
 
 class App extends Component {
   render() {
@@ -19,11 +21,15 @@ class App extends Component {
               <Route exact path="/" component={HomeMain} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              <PrivateRoute exact path="/user/dashboard" />
+              <PrivateRoute
+                exact
+                path="/user/dashboard"
+                component={UserDashboard}
+              />
               <AdminRoute
                 exact
                 path="/admin/dashboard"
-                componet={AdminDashboard}
+                component={AdminDashboard}
               />
             </Switch>
           </Router>

@@ -34,15 +34,9 @@ router.delete(
   remove
 );
 
-router.post(
-  "/categorry/create/:userId",
-  requireSignin,
-  isAuth,
-  isAdmin,
-  create
-);
+router.post("/category/create/:userId", requireSignin, isAuth, isAdmin, create);
 
 router.param("userId", userById);
-router.param("categoryId", categoryId);
+router.param("categoryId", categoryById);
 
 module.exports = router;
