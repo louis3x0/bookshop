@@ -4,9 +4,7 @@ const Footer = () => {
   return (
     <div>
       <footer>
-        <div className="text-color text-center">
-          <p> Copyright 2020</p>
-        </div>
+        <div className="text-color text-center"></div>
       </footer>
     </div>
   );

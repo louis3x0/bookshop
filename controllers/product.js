@@ -1,3 +1,4 @@
+//https://www.npmjs.com/package/formidable
 const formidable = require("formidable");
 const _ = require("lodash");
 const fs = require("fs");
@@ -139,6 +140,7 @@ exports.listRelated = (req, res) => {
     });
 };
 
+//list all categories that the product belongs to
 exports.listCategories = (req, res) => {
   Product.distinct("category", {}, (err, categories) => {
     if (err) return res.status(400).json({ error: "The categories not found" });
@@ -146,12 +148,19 @@ exports.listCategories = (req, res) => {
   });
 };
 
+/*
+We will show categories in checkbox and price range in radio button
+an api request as user clicks on those checkboxes and buttons
+*/
 exports.listBySearch = (req, res) => {
   let order = req.body.order ? req.body.order : "desc";
   let sortBy = req.body.sortBy ? req.body.sortBy : "_id";
   let limit = req.body.limit ? parseInt(req.body.limit) : 100;
   let skip = parseInt(req.body.skip);
   let findArgs = {};
+
+  // console.log(order, sortBy, limit, skip, req.body.filters);
+  // console.log('findArgs', findArgs);
 
   for (let key in req.body.filters) {
     if (req.body.filters[key].length > 0) {

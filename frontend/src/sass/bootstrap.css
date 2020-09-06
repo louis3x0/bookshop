@@ -507,8 +507,8 @@ mark,
 }
 
 .img-fluid {
-  max-width: 93%;
-  height: 75%;
+  max-width: 99%;
+  height: 80%;
 }
 
 .img-thumbnail {
@@ -5254,7 +5254,7 @@ input[type="button"].btn-block {
     flex-flow: row wrap;
     justify-content: flex-start;
     margin-right: -110px;
-    margin-left: -9px;
+    margin-left: -20px;
   }
   .card-deck .card {
     flex: 0 1 21%; /* explanation below */
