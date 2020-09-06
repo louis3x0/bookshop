@@ -89,96 +89,106 @@ const CreateProduct = () => {
   const newPostForm = () => (
     <>
       <Link onClick={handlecatShow}>Create product</Link>
-      <Modal show={catshow} onHide={handlecatClose}>
-        <form onSubmit={clickSubmit}>
-          <h4>Post Photo</h4>
-          <div className="form-group">
-            <label className="btn btn-secondary">
+      <Modal
+        className="modal-content-product"
+        show={catshow}
+        onHide={handlecatClose}
+      >
+        <form className="form-list" onSubmit={clickSubmit}>
+          <div className="">
+            <label className="c-product">Create product</label>
+            <form className="form-group">
+              <input
+                type="text"
+                onChange={handleChange("name")}
+                className="form-control"
+                placeholder="Name"
+                value={name}
+              />
+            </form>
+
+            <form className="form-group">
+              <input
+                type="number"
+                placeholder="Price"
+                onChange={handleChange("price")}
+                className="form-control"
+                value={price}
+              />
+            </form>
+
+            <form className="form-group">
+              <select
+                placeholder="Category"
+                onChange={handleChange("category")}
+                className="select-form"
+              >
+                <option>Select category</option>
+                {categories &&
+                  categories.map((c, i) => (
+                    <option key={i} value={c._id}>
+                      {c.name}
+                    </option>
+                  ))}
+              </select>
+            </form>
+
+            <form className="form-group">
+              <select
+                placeholder="Shipping"
+                onChange={handleChange("shipping")}
+                className="select-form"
+              >
+                <option placeholder="Shipping">Select shipping</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select>
+            </form>
+            <form>
+              <input
+                onChange={handleChange("quantity")}
+                type="number"
+                placeholder="Enter quantity"
+                id="tentacles"
+                name="tentacles"
+                className="input-quantity"
+                min="10"
+                max="100"
+                value={quantity}
+              />
+            </form>
+            <form>
+              <textarea
+                onChange={handleChange("description")}
+                className="form-control f-description"
+                value={description}
+              />
+            </form>
+            <form className="form-group">
+              {" "}
               <input
                 onChange={handleChange("photo")}
                 type="file"
                 name="photo"
                 accept="image/*"
+                className="photo photo-btn"
               />
-            </label>
+            </form>
+            <div className="button-list">
+              <button
+                className="btn btn-outline-primary float-right btn-create button-category
+          "
+              >
+                Create
+              </button>
+              <Button
+                onClick={handlecatClose}
+                className="btn btn-outline-primary button-category"
+              >
+                Close
+              </Button>
+            </div>
           </div>
-
-          <div className="form-group">
-            <label className="text-muted">Name</label>
-            <input
-              onChange={handleChange("name")}
-              type="text"
-              className="form-control"
-              value={name}
-            />
-          </div>
-
-          <div className="form-group">
-            <label className="text-muted">Description</label>
-            <textarea
-              onChange={handleChange("description")}
-              className="form-control"
-              value={description}
-            />
-          </div>
-
-          <div className="form-group">
-            <label className="text-muted">Price</label>
-            <input
-              onChange={handleChange("price")}
-              type="number"
-              className="form-control"
-              value={price}
-            />
-          </div>
-
-          <div className="form-group">
-            <label className="text-muted">Category</label>
-            <select
-              onChange={handleChange("category")}
-              className="form-control"
-            >
-              <option>Please select</option>
-              {categories &&
-                categories.map((c, i) => (
-                  <option key={i} value={c._id}>
-                    {c.name}
-                  </option>
-                ))}
-            </select>
-          </div>
-
-          <div className="form-group">
-            <label className="text-muted">Shipping</label>
-            <select
-              onChange={handleChange("shipping")}
-              className="form-control"
-            >
-              <option>Please select</option>
-              <option value="0">No</option>
-              <option value="1">Yes</option>
-            </select>
-          </div>
-
-          <div className="form-group">
-            <label className="text-muted">Quantity</label>
-            <input
-              onChange={handleChange("quantity")}
-              type="number"
-              className="form-control"
-              value={quantity}
-            />
-          </div>
-
-          <Link
-            to="/admin/dashboard"
-            className="btn btn-outline-warning float-left"
-          >
-            Back
-          </Link>
-          <button className="btn btn-outline-primary float-right mb-3">
-            Create
-          </button>
         </form>
         {showError()}
         {showSuccess()}
@@ -188,20 +198,17 @@ const CreateProduct = () => {
   );
 
   const showError = () => (
-    <div
-      className="alert alert-danger"
-      style={{ display: error ? "" : "none" }}
-    >
+    <div className="alert" style={{ display: error ? "" : "none" }}>
       {error}
     </div>
   );
 
   const showSuccess = () => (
     <div
-      className="alert alert-info"
+      className="alert color-new"
       style={{ display: createdProduct ? "" : "none" }}
     >
-      <h2>{`${createdProduct}`} is created!</h2>
+      <h2>{`${createdProduct}`} has been created!</h2>
     </div>
   );
 

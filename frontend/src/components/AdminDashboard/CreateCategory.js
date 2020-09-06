@@ -39,11 +39,11 @@ const CreateCategory = () => {
   };
   const showSuccess = () => {
     if (success)
-      return <h3 className="text-success">{name} is created successfully!</h3>;
+      return <h3 className="alert color-new">{name} has been created!</h3>;
   };
 
   const showError = () => {
-    if (error) return <h3 className="text-danger">{error}</h3>;
+    if (error) return <h3 className="alert">{error}</h3>;
   };
 
   const newCategoryForm = () => (

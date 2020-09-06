@@ -352,3 +352,57 @@ img:hover + button {
 .form-category {
   margin-top: 5rem !important;
 }
+
+.c-product {
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  padding: 1rem;
+}
+
+.select-form {
+  padding: 0.5rem 0.7rem;
+  margin: 0 auto;
+  width: 90%;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 0.15rem;
+  background-color: white;
+}
+
+option {
+  color: rgb(78, 84, 110);
+}
+
+.input-quantity {
+  padding: 0.5rem 0.7rem;
+  margin: 0 auto;
+  width: 90%;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 0.15rem;
+  background-color: white;
+}
+
+.f-description {
+  width: 100%;
+  padding: 0.5rem !important;
+  height: 15vh !important;
+  margin-top: 1rem !important;
+}
+
+.photo {
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.button-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.photo {
+  font-size: 13px;
+}
