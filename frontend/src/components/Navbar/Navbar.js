@@ -35,7 +35,11 @@ const Navbar = ({ history }) => {
               Home
             </Link>
           </li>
-
+          <li className="nav-item">
+            <Link to="/shop" className="nav-link" style={isActive("/shop")}>
+              Shop
+            </Link>
+          </li>
           {!isAuthenticated() && (
             <>
               <li className="nav-item">
@@ -77,7 +81,7 @@ const Navbar = ({ history }) => {
                   className="nav-link"
                   style={isActive("/user/dashboard")}
                 >
-                  {isAuthenticated().user.name}
+                  {(isAuthenticated(), "Profile")}
                 </Link>
               </li>
             </>
@@ -91,7 +95,7 @@ const Navbar = ({ history }) => {
                   className="nav-link"
                   style={isActive("/admin/dashboard")}
                 >
-                  {isAuthenticated().user.name}
+                  {(isAuthenticated(), "Profile")}
                 </Link>
               </li>
               <li className="nav-item">

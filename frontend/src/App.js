@@ -10,6 +10,7 @@ import AdminRoute from "./PrivateRoutes/AdminRoute";
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
 import CreateCategory from "./components/AdminDashboard/CreateCategory";
 import CreateProduct from "./components/AdminDashboard/CreateProduct";
+import Shop from "./components/Shop/Shop";
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
               <Route exact path="/" component={HomeMain} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/shop" component={Shop} />
               <PrivateRoute
                 exact
                 path="/user/dashboard"
