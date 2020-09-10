@@ -1,0 +1,22 @@
+.center {
+  max-width: 90%;
+  margin: auto;
+}
+
+.section-header {
+  padding-bottom: 1.5rem;
+}
+
+.star {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.ribbon {
+  @include coords(1vw, null, null, -3.4vw);
+  width: 12.5vw;
+  font-size: 1.7vw;
+  padding: 0.2rem 0;
+  z-index: 1;
+  transform: rotate(-40deg);
+}

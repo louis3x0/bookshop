@@ -88,7 +88,9 @@ const CreateProduct = () => {
 
   const newPostForm = () => (
     <>
-      <Link onClick={handlecatShow}>Create product</Link>
+      <Link onClick={handlecatShow} className="link-items">
+        Create product
+      </Link>
       <Modal
         className="modal-content-product"
         show={catshow}

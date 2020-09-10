@@ -4,9 +4,7 @@ const Checkbox = ({ categories, handleFilters }) => {
   const [checked, setChecked] = useState([]);
 
   const handleToggle = (categoryId) => () => {
-    //return -1 if categoryId is not in the checked state
     const currentCategoryId = checked.indexOf(categoryId);
-    //if -1, push it to the state, else splice it out
     const newCheckedCategoryId = [...checked];
     if (currentCategoryId === -1) {
       newCheckedCategoryId.push(categoryId);
@@ -14,7 +12,6 @@ const Checkbox = ({ categories, handleFilters }) => {
       newCheckedCategoryId.splice(currentCategoryId, 1);
     }
     setChecked(newCheckedCategoryId);
-    //pass [ids] to parent components
     handleFilters(newCheckedCategoryId);
   };
 
@@ -23,7 +20,6 @@ const Checkbox = ({ categories, handleFilters }) => {
       <input
         type="checkbox"
         className="form-check-input"
-        //return false or true
         value={checked.indexOf(category._id === -1)}
         onChange={handleToggle(category._id)}
       />

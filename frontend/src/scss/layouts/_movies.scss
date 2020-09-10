@@ -1,0 +1,23 @@
+.movies {
+  background: darken($paleblack, 5%);
+
+  padding: 3rem 0;
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 1.5rem;
+  }
+
+  &__main:after {
+    content: "";
+    flex: auto;
+  }
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

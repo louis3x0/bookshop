@@ -9,12 +9,13 @@ form {
   flex-direction: column;
 }
 
-img {
+.money {
   height: 49px;
 }
 
 .wrapper {
-  margin-top: 6rem;
+  margin-top: 3rem;
+  overflow: hidden;
 }
 
 .overview {
@@ -87,7 +88,7 @@ base {
   box-shadow: rgba(0, 0, 0, 0.06) 0px 3px 20px;
 }
 
-a {
+.link-items {
   color: rgba(0, 0, 0, 0.7) !important;
   font-size: 14px;
 }
@@ -482,4 +483,14 @@ option {
 
 .text-content {
   text-align: left;
+}
+
+.logou {
+  height: 50px;
+  margin-top: 2rem;
+}
+
+.login-c {
+  overflow: hidden;
+  overflow-y: hidden;
 }

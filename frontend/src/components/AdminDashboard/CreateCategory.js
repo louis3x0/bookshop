@@ -48,7 +48,7 @@ const CreateCategory = () => {
 
   const newCategoryForm = () => (
     <>
-      <Link className="c-products" onClick={handlecatShow}>
+      <Link className="c-products link-items" onClick={handlecatShow}>
         Create category
       </Link>
       <Modal show={catshow} onHide={handlecatClose}>

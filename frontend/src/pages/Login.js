@@ -94,24 +94,26 @@ const Login = () => {
   };
 
   return (
-    <div className="container ">
-      <div className="wrapper">
-        <img src={logo} alt="" className="rounded mx-auto d-block" />
-        <h1 className="login mt-3">Log in to get started</h1>
-        <p class="overview">
-          <tt>\EpicBook</tt> is a place where you can get free books.
-        </p>
+    <div className="login-c">
+      <div className="container">
+        <div className="wrapper">
+          <img src={logo} alt="" className="rounded mx-auto d-block logou" />
+          <h1 className="login mt-3">Log in to get started</h1>
+          <p class="overview">
+            <tt>\EpicBook</tt> is a place where you can get free books.
+          </p>
 
-        {showLoading()}
-        {loginForm()}
-        {redirectUser()}
+          {showLoading()}
+          {loginForm()}
+          {redirectUser()}
 
-        <p className="text-center mt-5">
-          Not a member?{" "}
-          <Link className="member" to="/register">
-            Sign up.
-          </Link>
-        </p>
+          <p className="text-center mt-5">
+            Not a member?{" "}
+            <Link className="member" to="/register">
+              Sign up.
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

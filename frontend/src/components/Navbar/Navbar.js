@@ -5,114 +5,43 @@ import { signout } from "../../helpers/auth";
 import logo from "../../assets/logo.png";
 
 const Navbar = ({ history }) => {
-  const isActive = (path) => {
-    if (history.location.pathname === path) {
-      return { color: "#000" };
-    } else {
-      return { color: "#fff" };
-    }
-  };
   return (
-    <nav className="navbar navbar-expand-md navbar-dark">
-      <Link className="navbar-brand" to="/">
-        <img src={logo} alt="" className="nav-image" srcset="" />
-      </Link>{" "}
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <Link to="/" className="nav-link" style={isActive("/")}>
+    <header className="headerz">
+      <div className="headerz__wrapper">
+        <a href="" className="headerz__logo">
+          <img src={logo} alt="" class="headerz__logo-image" />
+        </a>
+        <div className="headerz__right">
+          <input
+            type="text"
+            name="movie-title"
+            id="search"
+            class="headerz__search"
+            placeholder="Quick search"
+          />
+          <nav className="nav-items">
+            <a href="" class="headerz__link">
               Home
+            </a>
+            <a href="" class="headerz__link">
+              4K
+            </a>
+            <a href="" class="headerz__link">
+              Trending
+            </a>
+            <a href="" class="headerz__link">
+              Browse books
+            </a>
+            <Link href="/login" class="headerz__auth-link">
+              Login
             </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/shop" className="nav-link" style={isActive("/shop")}>
-              Shop
+            <Link to="/register" class="headerz__auth-link d-n">
+              Register
             </Link>
-          </li>
-          {!isAuthenticated() && (
-            <>
-              <li className="nav-item">
-                <Link
-                  to="/register"
-                  className="nav-link"
-                  style={isActive("/register")}
-                >
-                  Register
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to="/login"
-                  className="nav-link"
-                  style={isActive("/login")}
-                >
-                  Sign In
-                </Link>
-              </li>
-            </>
-          )}
-          {/* User Links */}
-          {isAuthenticated() && isAuthenticated().user.role === 0 && (
-            <>
-              <li className="nav-item">
-                <Link
-                  to="/login"
-                  className="nav-link"
-                  style={isActive("/signout")}
-                  onClick={() => signout()}
-                >
-                  Sign Out
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to="/user/dashboard"
-                  className="nav-link"
-                  style={isActive("/user/dashboard")}
-                >
-                  {(isAuthenticated(), "Profile")}
-                </Link>
-              </li>
-            </>
-          )}
-          {/* Admin Links */}
-          {isAuthenticated() && isAuthenticated().user.role === 1 && (
-            <>
-              <li className="nav-item">
-                <Link
-                  to="/admin/dashboard"
-                  className="nav-link"
-                  style={isActive("/admin/dashboard")}
-                >
-                  {(isAuthenticated(), "Profile")}
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to="/login"
-                  className="nav-link"
-                  style={isActive("/signout")}
-                  onClick={() => signout()}
-                >
-                  Sign Out
-                </Link>
-              </li>
-            </>
-          )}
-        </ul>
+          </nav>
+        </div>
       </div>
-    </nav>
+    </header>
   );
 };
 

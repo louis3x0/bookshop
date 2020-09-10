@@ -102,22 +102,24 @@ const Register = () => {
   );
 
   return (
-    <div className="container ">
-      <div className="wrapper">
-        <img src={logo} alt="" className="rounded mx-auto d-block" />
-        <h1 className="login mt-3">Register</h1>
-        <p class="overview">
-          <tt>\EpicBook</tt> get your account now and start explore.
-        </p>
+    <div className="login-c">
+      <div className="container ">
+        <div className="wrapper">
+          <img src={logo} alt="" className="rounded mx-auto d-block logou" />
+          <h1 className="login mt-3">Register</h1>
+          <p class="overview">
+            <tt>\EpicBook</tt> get your account now and start explore.
+          </p>
 
-        {signUpForm()}
-        {showSuccess()}
-        <p className="text-center mt-5">
-          Already have an account?{" "}
-          <Link className="member" to="/login">
-            Log in
-          </Link>
-        </p>
+          {signUpForm()}
+          {showSuccess()}
+          <p className="text-center mt-5">
+            Already have an account?{" "}
+            <Link className="member" to="/login">
+              Log in
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

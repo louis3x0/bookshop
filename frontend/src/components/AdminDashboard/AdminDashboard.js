@@ -25,10 +25,14 @@ const AdminDashboard = () => {
   const adminNav = () => {
     return (
       <nav class="navbar nav-dash justify-content-between">
-        <Link className="dashboard" to="/">
+        <Link className="dashboard link-items" to="/">
           Dashboard
         </Link>
-        <Link to="/login" className="nav-logout" onClick={() => signout()}>
+        <Link
+          to="/login"
+          className="nav-logout link-items"
+          onClick={() => signout()}
+        >
           Sign Out
         </Link>
       </nav>
@@ -38,7 +42,7 @@ const AdminDashboard = () => {
   const Modals = () => {
     return (
       <>
-        <Link className="c-products" onClick={handleShow}>
+        <Link className="c-products link-items" onClick={handleShow}>
           Create products
         </Link>
         <Modal show={show} onHide={handleClose}>
@@ -62,7 +66,9 @@ const AdminDashboard = () => {
   const CatModals = () => {
     return (
       <>
-        <Link onClick={handlecatShow}>Create category</Link>
+        <Link className="link-items" onClick={handlecatShow}>
+          Create category
+        </Link>
         <Modal show={catshow} onHide={handlecatClose}>
           <div className="modal-header modal-h" closeButton>
             <h5 className="modal-title modal-t">Create category</h5>
@@ -84,7 +90,7 @@ const AdminDashboard = () => {
     return (
       <div>
         <div className="greeting-container row">
-          <img src={money} alt="" srcset="" />
+          <img src={money} alt="" className="money" srcset="" />
           <div className="greetings">
             <p className="name">Hello {name}</p>
             <span className="greet-description">

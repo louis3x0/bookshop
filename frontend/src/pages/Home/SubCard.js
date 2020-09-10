@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Images from "./Images";
 
-const Card = ({ product }) => {
+const SubCard = ({ product }) => {
   return (
-    <div class="card-home">
+    <div class="card-home released">
       <Images item={product} />
 
       <a href="" class="title">
@@ -15,4 +15,4 @@ const Card = ({ product }) => {
   );
 };
 
-export default Card;
+export default SubCard;

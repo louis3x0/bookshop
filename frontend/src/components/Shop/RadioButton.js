@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const RadioBox = ({ prices, handleFilters }) => {
-  const [vaule, setValue] = useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event) => {
     handleFilters(event.target.value);

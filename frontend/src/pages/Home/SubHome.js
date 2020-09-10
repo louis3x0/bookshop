@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { getProducts } from "../../helpers/userFetch";
-import Card from "./Card";
+import SubCard from "./SubCard";
 import popular from "../../assets/nature.svg";
 
-const Home = () => {
+const SubHome = () => {
   const [productsBySold, setProductBySold] = useState([]);
   const [productsByArrival, setProductByArrival] = useState([]);
   const [error, setError] = useState(false);
@@ -48,30 +48,19 @@ const Home = () => {
     );
 
   return (
-    <section class="pos--rel hero">
-      <div class="text--center hero__head">
-        <h1 class="hero__title text--white">
-          Download BSH books: HD smallest size
-        </h1>
-        <p class="hero__subtitle">
-          Welcome to the official <b>BookShop</b> website. Here you will be able
-          to browse and download books for free. Only here: Book Shop PDF.
-        </p>
+    <section class="movies">
+      <div class="section-header center">
+        <h4 class="movies__header text--white">Latest YIFY Movie Torrents</h4>
+        <a class="movies__browse text-boold text--gray">Browse all </a>
       </div>
 
-      <div className="hero__popular">
-        <h2 class="hero__popular-header">
-          <img src={popular} class="star" alt="" />
-          <span class="hero__text">Popular Downloads</span>
-        </h2>
-        <div class="hero__cards bordered--top brdr--clear">
-          {productsByArrival.slice(0, 4).map((product, i) => (
-            <Card key={i} product={product} />
-          ))}
-        </div>
+      <div className="movies__main center d--flex jc--start flex--wrap">
+        {productsByArrival.map((product, i) => (
+          <SubCard key={i} product={product} />
+        ))}
       </div>
     </section>
   );
 };
 
-export default Home;
+export default SubHome;

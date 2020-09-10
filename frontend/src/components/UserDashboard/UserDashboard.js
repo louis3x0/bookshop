@@ -22,10 +22,14 @@ const UserDashboard = () => {
   const adminNav = () => {
     return (
       <nav class="navbar nav-dash justify-content-between">
-        <Link className="dashboard" to="/">
+        <Link className="dashboard link-items" to="/">
           Dashboard
         </Link>
-        <Link to="/login" className="nav-logout" onClick={() => signout()}>
+        <Link
+          to="/login"
+          className="nav-logout link-items"
+          onClick={() => signout()}
+        >
           Sign Out
         </Link>
       </nav>
@@ -36,7 +40,7 @@ const UserDashboard = () => {
     return (
       <div>
         <div className="greeting-container row">
-          <img src={camping} className="camping" alt="" srcset="" />
+          <img src={camping} className="money camping" alt="" srcset="" />
           <div className="greetings">
             <p className="name name-user">Hello {name}</p>
             <span className="greet-description">
