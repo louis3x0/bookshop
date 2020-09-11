@@ -11,6 +11,7 @@
 @import "./layouts/header";
 @import "./layouts/hero";
 @import "./layouts/movies";
+@import "./layouts/footer";
 
 //Utilities
 @import "./utilities/border";
@@ -21,3 +22,8 @@
 @import "./utilities/position";
 
 @import "./components/base";
+@import "./components/nav";
+
+// Responsive
+@import "./media-queries/footer";
+@import "./media-queries/header";

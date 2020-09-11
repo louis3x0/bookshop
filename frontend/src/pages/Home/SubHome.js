@@ -50,12 +50,12 @@ const SubHome = () => {
   return (
     <section class="movies">
       <div class="section-header center">
-        <h4 class="movies__header text--white">Latest YIFY Movie Torrents</h4>
+        <h4 class="movies__header text--white">Latest Books</h4>
         <a class="movies__browse text-boold text--gray">Browse all </a>
       </div>
 
       <div className="movies__main center d--flex jc--start flex--wrap">
-        {productsByArrival.map((product, i) => (
+        {productsByArrival.slice(0, 8).map((product, i) => (
           <SubCard key={i} product={product} />
         ))}
       </div>

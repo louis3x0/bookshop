@@ -13,7 +13,7 @@ export const getProductsBySearch = (params) => {
 
 export const getProducts = (sortBy) => {
   return fetch(
-    `${process.env.REACT_APP_API_URL}/products?sortBy=${sortBy}&order=desc&limit=6`,
+    `${process.env.REACT_APP_API_URL}/products?sortBy=${sortBy}&order=desc&limit=100`,
     {
       method: "GET",
     }

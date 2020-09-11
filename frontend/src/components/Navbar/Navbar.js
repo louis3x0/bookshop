@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import { isAuthenticated } from "../../helpers/isAuthenticated";
 import { signout } from "../../helpers/auth";
 import logo from "../../assets/logo.png";
+import MobileMenu from "./MobileMenu";
 
 const Navbar = ({ history }) => {
   return (
@@ -32,7 +33,7 @@ const Navbar = ({ history }) => {
             <a href="" class="headerz__link">
               Browse books
             </a>
-            <Link href="/login" class="headerz__auth-link">
+            <Link to="/login" class="headerz__auth-link">
               Login
             </Link>
             <Link to="/register" class="headerz__auth-link d-n">
@@ -40,6 +41,7 @@ const Navbar = ({ history }) => {
             </Link>
           </nav>
         </div>
+        <MobileMenu />
       </div>
     </header>
   );

@@ -9,11 +9,6 @@
     flex-wrap: wrap;
     padding: 0 1.5rem;
   }
-
-  &__main:after {
-    content: "";
-    flex: auto;
-  }
 }
 
 .section-header {
