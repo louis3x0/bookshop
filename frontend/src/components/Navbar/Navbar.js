@@ -17,7 +17,7 @@ const Navbar = ({ history }) => {
             type="text"
             name="movie-title"
             id="search"
-            class="headerz__search"
+            class="headerz__search headerz__link"
             placeholder="Quick search"
           />
           <nav className="nav-items">
@@ -33,15 +33,15 @@ const Navbar = ({ history }) => {
             <a href="" class="headerz__link">
               Browse books
             </a>
-            <Link to="/login" class="headerz__auth-link">
+            <Link to="/login" class=" headerz__link headerz__auth-link">
               Login
             </Link>
-            <Link to="/register" class="headerz__auth-link d-n">
+            <Link to="/register" class="headerz__link headerz__auth-link d-n">
               Register
             </Link>
+            <MobileMenu />
           </nav>
         </div>
-        <MobileMenu />
       </div>
     </header>
   );
